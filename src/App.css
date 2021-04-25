@@ -6,20 +6,20 @@ body {
   background-attachment:fixed;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .ui.container {
     width: 700px;
     max-width: 700px;
   }
+} */
 
-  nav.ui.container .ui.header {
-    float: left;
-    margin-top: 12px;
-  }
+nav.ui.container .ui.header {
+  float: left;
+  margin-top: 12px;
+}
 
-  nav.ui.container .ui.inverted.compact.menu {
-    float: right;
-  }
+nav.ui.container .ui.inverted.compact.menu {
+  float: right;
 }
 
 .ui.inverted.vertical.center.aligned.segment {
