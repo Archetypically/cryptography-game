@@ -6,7 +6,7 @@ export default function NotFound(props) {
   let history = useHistory();
 
   return (<Container>
-    <Card fluid="fluid" color="red">
+    <Card fluid color="red">
       <Card.Content>
         <Card.Header>
           <h1 style={{
@@ -16,7 +16,7 @@ export default function NotFound(props) {
         <Card.Meta>Not Found</Card.Meta>
         <Card.Description>The page you're looking for can't be found.</Card.Description>
       </Card.Content>
-      <Card.Content extra="extra">
+      <Card.Content extra>
         <Button fluid animated basic color="red" onClick={history.goBack}>
           <Button.Content visible>Go back</Button.Content>
           <Button.Content hidden>

@@ -7,7 +7,8 @@ export default function PageHeader () {
 
   return (
     <Container as="nav">
-      <Header inverted as="h1"
+      <Header inverted as="a"
+        href="#/"
         icon="code"
         content="cryptography"
         subheader="ga.me" />

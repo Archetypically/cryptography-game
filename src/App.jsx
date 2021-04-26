@@ -32,18 +32,21 @@ import "./App.css";
 export default function App() {
   return (<Container className="App">
     <BrowserView>
-      <Segment inverted="inverted" vertical="vertical" textAlign="center">
+      <Segment inverted vertical textAlign="center">
         <Router basename="/" hashType="slash">
           <PageHeader/>
           <div>
             <Switch>
-              <Route exact="exact" path="/">
+              <Route exact={true} path="/">
                 <Home/>
               </Route>
               <Route path="/quiz">
-                <Quiz/>
+                <Quiz />
               </Route>
-              <Route exact="exact" path="/not-found">
+              <Route path="/result/*">
+                <Result />
+              </Route>
+              <Route exact={true} path="/not-found">
                 <NotFound/>
               </Route>
               <Redirect to="/not-found"/>
@@ -55,8 +58,8 @@ export default function App() {
     </BrowserView>
     <MobileView>
       <Container className="App">
-        <Segment inverted="inverted" vertical="vertical" textAlign="center">
-          <Message negative="negative" floating="floating" icon='warning' content='Not supported on mobile. Please use a desktop browser to access this site.'/>
+        <Segment inverted vertical textAlign="center">
+          <Message negative floating icon='warning' content='Not supported on mobile. Please use a desktop browser to access this site.'/>
           <Attribution/>
         </Segment>
       </Container>
