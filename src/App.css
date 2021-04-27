@@ -6,6 +6,10 @@ body {
   background-attachment:fixed;
 }
 
+code {
+  background-color: lightgray;
+}
+
 /* @media only screen and (min-width: 768px) {
   .ui.container {
     width: 700px;
@@ -81,7 +85,7 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 .ui.content.container p {
   font-size: 21px;
   line-height: 1.6;
-  font-weight: 300;
+  font-weight: 350;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

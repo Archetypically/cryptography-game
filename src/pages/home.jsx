@@ -17,13 +17,13 @@ export default function Home() {
   return (
     <Container className="content">
       <Header inverted as="h1">
-        cryp·tog·ra·phy <code>(/kripˈtäɡrəfē/)</code>
+        cryp·tog·ra·phy <code style={{backgroundColor: "transparent"}}>(/kripˈtäɡrəfē/)</code>
         <Header.Subheader>
            the practice and study of techniques for secure communication
         </Header.Subheader>
       </Header>
       <p>
-        From <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="__blank">Caesarian ciphers</a> to <a href="https://en.wikipedia.org/wiki/X.509" target="__blank">`X.509` public key certificates</a>, <u>cryptography</u> `permeates our everyday lives. Haven't you ever wondered which cryptography you are? Find out now!`
+        From <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="__blank">Caesarian ciphers</a> to <a href="https://en.wikipedia.org/wiki/X.509" target="__blank">`X.509` public key certificates</a>, <u>cryptography</u> permeates our everyday lives. Haven't you ever wondered which cryptography you are? Find out now!
       </p>
       <Message floating icon="info" color="black" header="Disclaimer" list={ disclaimerItems }/>
       <Button.Group>

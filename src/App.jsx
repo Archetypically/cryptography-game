@@ -25,6 +25,7 @@ import Home from "./pages/home.jsx";
 import Quiz from "./pages/quiz.jsx";
 import Result from "./pages/result.jsx";
 import NotFound from "./pages/not-found.jsx";
+import PossibleResults from "./pages/possible-results.jsx";
 
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
@@ -45,6 +46,9 @@ export default function App() {
               </Route>
               <Route path="/result/*">
                 <Result />
+              </Route>
+              <Route exact path="/possible-results">
+                <PossibleResults />
               </Route>
               <Route exact={true} path="/not-found">
                 <NotFound/>

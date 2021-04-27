@@ -16,6 +16,9 @@ export default function PageHeader () {
         <Menu.Item active={ location.pathname === '/' } href="#/">
           Home
         </Menu.Item>
+        <Menu.Item active={ location.pathname === '/possible-results' } href="#/possible-results">
+          Possible Results
+        </Menu.Item>
         <Menu.Item href='https://github.com/Archetypically/cryptography-game' target='_blank' >
           <Icon name="github" />
         </Menu.Item>
