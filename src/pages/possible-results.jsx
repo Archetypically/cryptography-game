@@ -22,12 +22,11 @@ export default function PossibleResults() {
     'black',
   ]
 
-
   return (
-    <Container style={{position: "absolute", top: "250px"}}>
+    <Container className="offset">
       <Label.Group size="massive">
         { Object.keys(possibleResults).map((key, i) => {return(
-          <Label as="a" href={ "#/result/" + key } color={colors[i]}>
+          <Label key={key} as="a" href={ "#/result/" + key } color={colors[i]}>
             {possibleResults[key].displayName}
           </Label>
         )})}

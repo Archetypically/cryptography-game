@@ -57,7 +57,7 @@ export default function Result() {
                   possibleResults[thisResult].details.map((line, i) =>
                   {
                     return (
-                      <List.Item>{line}</List.Item>
+                      <List.Item key={i}>{line}</List.Item>
                     );
                   })
                 }
