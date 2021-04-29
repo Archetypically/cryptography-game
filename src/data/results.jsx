@@ -1,6 +1,6 @@
 const possibleResults = {
   aes: {
-    img: "https://cdn.proprivacy.com/storage/images/bestvpn/2019/02/shutterstock-344190413-featured_image-social.png",
+    img: "https://i.imgur.com/LcZwI5V.png",
     displayName: "Advanced Encryption Standard",
     secondaryNames: ["AES", "Rijndael"],
     details: [
@@ -64,7 +64,7 @@ const possibleResults = {
     ]
   },
   twofish: {
-    img: "https://www.encryptionconsulting.com/wp-content/uploads/2020/09/twofish-secure.jpg",
+    img: "https://i.imgur.com/gC3CDq5.jpg",
     displayName: "Twofish",
     secondaryNames: [],
     details: [
@@ -97,7 +97,7 @@ const possibleResults = {
     ]
   },
   des: {
-    img: "https://miro.medium.com/max/2560/1*GFuorFtR_T0mnaoIOMNsmg.jpeg",
+    img: "https://i.imgur.com/2n2kbPj.jpg",
     displayName: "Data Encryption Standard",
     secondaryNames: ["DES", "Data Encryption Algorithm", "DEA"],
     details: [
@@ -130,7 +130,7 @@ const possibleResults = {
     ]
   },
   serpent: {
-    img: "https://www.cl.cam.ac.uk/~rja14/Papers/serpent2.gif",
+    img: "https://i.imgur.com/gwJ5f6d.gif",
     displayName: "Serpent",
     secondaryNames: ["Serpent-0", "Serpent-1"],
     details: [
@@ -164,7 +164,7 @@ const possibleResults = {
     ]
   },
   caesarian: {
-    img: "http://www.thealmightyguru.com/Wiki/images/thumb/1/1c/Caesar_Cipher_-_Ring.svg/256px-Caesar_Cipher_-_Ring.svg.png",
+    img: "https://i.imgur.com/7HWN9Ms.png",
     displayName: "Caesarian Cipher",
     secondaryNames: ["Caesar's cipher", "shift cipher", "Caesar's code"],
     details: [
@@ -197,7 +197,7 @@ const possibleResults = {
     ]
   },
   railfence: {
-    img: "https://www.thecrazyprogrammer.com/wp-content/uploads/2017/09/Rail-Fence-Cipher-Example.png",
+    img: "https://i.imgur.com/ECxzPGD.png",
     displayName: "Rail Fence Cipher",
     secondaryNames: ["Zigzag cipher"],
     details: [
@@ -278,7 +278,7 @@ const possibleResults = {
     ]
   },
   rsa: {
-    img: "https://cdn.worldvectorlogo.com/logos/rsa-22.svg",
+    img: "https://i.imgur.com/IouMQdu.png",
     displayName: "RSA",
     secondaryNames: ["Rivest–Shamir–Adleman"],
     details: [
