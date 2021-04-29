@@ -1,5 +1,26 @@
 const answersToPoints = [
-  null, // The first one is the date processing.
+  { // Q1 (these points only apply if the year is CE)
+    2001: {
+      aes: 2,
+    },
+    1993: {
+      blowfish: 5,
+    },
+    1998: {
+      twofish: 5,
+      serpent: 5,
+    },
+    1977: {
+      des: 8,
+      rsa: 8,
+    },
+    1605: {
+      bacon: 20,
+    },
+    1987: {
+      rc4: 5,
+    },
+  },
   { // Q2
     "haute-couture": {
       aes: 5,

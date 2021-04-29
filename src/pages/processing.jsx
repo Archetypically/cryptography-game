@@ -43,14 +43,27 @@ export default function Processing() {
     let answers = ls.get("lastResultAnswers");
 
     for (const i in answers) {
+      let pointObj;
       if (i == 0) {
-        // Do something with the date here
-      } else {
-        const pointObj = answersToPoints[i][answers[i]];
-        for (const j in pointObj) {
-          resultsPoints[j] += pointObj[j];
+        // Specific favorite year processing
+        if (answers[i][1] == "BCE") {
+          pointObj = {
+            caesarian: 10
+          }
+        } else {
+          let year = answers[i][0];
+          if (year in answersToPoints[i]) {
+            pointObj = answersToPoints[i][year];
+          }
         }
+      } else {
+        pointObj = answersToPoints[i][answers[i]];
       }
+
+      for (const j in pointObj) {
+        resultsPoints[j] += pointObj[j];
+      }
+
     }
 
     let lastResult = "aes";
@@ -65,6 +78,8 @@ export default function Processing() {
 
     ls.set("lastResultName", lastResult);
     setLastResult(lastResult);
+
+    ls.set("lastResultPoints", resultsPoints);
 
     setTimeout(() => {setPercentage(17)}, 500);
     setTimeout(() => {setPercentage(28); setStep(1)}, 1000);

@@ -10,6 +10,7 @@ import {
   List,
   Label,
   Segment,
+  Rail,
 } from "semantic-ui-react";
 import {
   useLocation,
@@ -50,6 +51,16 @@ export default function Result() {
               {possibleResults[thisResult].secondaryNames.join(", ")}
             </Card.Meta>
             <Card.Description>
+              {
+              // <Rail position='left'>
+              //   <Segment>Your answers</Segment>
+              // </Rail>
+              //
+              // <Rail position='right'>
+              //   <Segment>Your points</Segment>
+              // </Rail>
+              }
+
               <Image bordered centered src={possibleResults[thisResult].img} height="202" />
               <Segment textAlign="left">
                 <List bulleted>

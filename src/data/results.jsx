@@ -1,10 +1,18 @@
+function createLinkNode(linkText, linkHref, postfix="") {
+  return (<a href={linkHref} target="_blank">{" " + linkText + postfix}</a>)
+}
+
 const possibleResults = {
   aes: {
     img: "https://i.imgur.com/LcZwI5V.png",
     displayName: "Advanced Encryption Standard",
     secondaryNames: ["AES", "Rijndael"],
     details: [
-        <p>Developed by Belgian cryptographers <u>Vincent Rijmen</u> and <u>Joan Daemen.</u></p>,
+        <p>Developed by Belgian cryptographers
+          {createLinkNode("Vincent Rijmen", "https://en.wikipedia.org/wiki/Vincent_Rijmen", " ")}
+          and
+          {createLinkNode("Joan Daemen", "https://en.wikipedia.org/wiki/Joan_Daemen")}.
+        </p>,
         "Adopted widely by the US Government and the National Institute of Standards and Technology (NIST) in 2001.",
         "A subset of the Rijndael cipher, AES contains the three key lengths of 128-, 192-, and 256-bits.",
         <p>Example: (AES-128) <code>wow cryptography is cool</code> turns into <code>`bb64a010 15ad5c86 9b5d5170 7b19b56b a196892f 497f96c1 7e69017b 57db9743`</code></p>
@@ -43,9 +51,9 @@ const possibleResults = {
     displayName: "Blowfish",
     secondaryNames: [],
     details: [
-      <p>Developed in 1993 by <u>Bruce Schneier</u>.</p>,
-      <p>Succeeded by <a href="#/result/twofish" target="__blank">Twofish</a> and Threefish.</p>,
-      "In the public domain, to be freely used by anyone.",
+      <p>Developed in 1993 by {createLinkNode("Bruce Schneier", "https://en.wikipedia.org/wiki/Bruce_Schneier")}.</p>,
+      <p>Succeeded by {createLinkNode("Twofish", "#/result/twofish")} and Threefish.</p>,
+      "In the public domain to be freely used by anyone.",
       "64-bit block sizes with variable key length from 32- to 448-bit."
     ],
     links: [{
@@ -68,10 +76,17 @@ const possibleResults = {
     displayName: "Twofish",
     secondaryNames: [],
     details: [
-      <p>Developed in 1998 by <u>Bruce Schneier</u>, <u>John Kelseyr</u>, <u>Doug Whiting</u>, <u>Chris Hall</u>, and <u>Niels Ferguson</u>.</p>,
+      <p>Developed in 1998 by
+        {createLinkNode("Bruce Schneier", "https://en.wikipedia.org/wiki/Bruce_Schneier")},
+        {createLinkNode("John Kelseyr", "https://en.wikipedia.org/wiki/John_Kelsey_(cryptanalyst)")},
+        Doug Whiting,
+        {createLinkNode("David Wagner", "https://en.wikipedia.org/wiki/David_A._Wagner")},
+        {createLinkNode("Chris Hall", "https://en.wikipedia.org/wiki/Chris_Hall_(cryptographer)")},
+        and
+        {createLinkNode("Niels Ferguson", "https://en.wikipedia.org/wiki/Niels_Ferguson")}. </p>,
       <p>Successor to <a href="#/result/blowfish" target="__blank">Blowfish</a>, Succeeded by Threefish.</p>,
       "A finalist for the AES certification, but ultimately not selected.",
-      "In the public domain, to be freely used by anyone.",
+      "In the public domain to be freely used by anyone.",
       "128-bit block sizes with variable key lengths of 128-, 192-, or 256-bit.",
     ],
     links: [{
@@ -134,10 +149,13 @@ const possibleResults = {
     displayName: "Serpent",
     secondaryNames: ["Serpent-0", "Serpent-1"],
     details: [
-      <p>Developed in 1998 by <u>Ross Anderson</u>, <u>Eli Biham</u>, and <u>Lars Knudsen</u>.</p>,
+      <p>Developed in 1998 by
+        {createLinkNode("Ross Anderson", "https://en.wikipedia.org/wiki/Ross_J._Anderson")},
+        {createLinkNode("Eli Biham", "https://en.wikipedia.org/wiki/Eli_Biham")}, and
+        {createLinkNode("Lars Knudsen", "https://en.wikipedia.org/wiki/Lars_Ramkilde_Knudsen")}.</p>,
       "A finalist for the AES certification, but ultimately placed second to Rijndael.",
       "Derived from the Square cipher.",
-      "In the public domain, to be freely used by anyone.",
+      "In the public domain to be freely used by anyone.",
       "128-bit block sizes with variable key lengths of 128-, 192-, or 256-bit.",
     ],
     links: [
@@ -169,7 +187,7 @@ const possibleResults = {
     secondaryNames: ["Caesar's cipher", "shift cipher", "Caesar's code"],
     details: [
       "A classical substitution cipher; one of the most widely known and simplest encryption algorithms.",
-      "Named after Julius Caesar, who used it in his private correspondence.",
+      <p>Named after {createLinkNode("Julius Caesar", "https://en.wikipedia.org/wiki/Julius_Caesar")}, who used it in his private correspondence.</p>,
       "Easily broken given 25 attempts (one for each shift of the alphabet).",
       <p>Example: (caesar-7) <code style={{backgroundColor: "lightgray"}}>wow cryptography is cool</code> turns into <code style={{backgroundColor: "lightgray"}}>dvd jyfwavnyhwof pz jvvs</code>.</p>,
     ],
@@ -227,7 +245,7 @@ const possibleResults = {
     displayName: "Bacon's Cipher",
     secondaryNames: ["Baconian cipher"],
     details: [
-      "A classical steganographic encoding developed by Francis Bacon in 1605.",
+      <p>A classical steganographic encoding developed by {createLinkNode("Francis Bacon", "https://en.wikipedia.org/wiki/Francis_Bacon")} in 1605.</p>,
       <p>Replaces each letter of the alphabet with a cluster of 5 composed only of the letters <code>a</code> and <code>b</code>.</p>,
       <p>Can be used with any two distinct symbols to represent<code>a</code> and <code>b</code>, as long as it is known which is which.</p>,
       "Any groups that do not map to one of the letters are assumed to be junk that is not part of the message.",
@@ -254,7 +272,7 @@ const possibleResults = {
     displayName: "RC4",
     secondaryNames: ["Rivest Cipher 4", "ARC4", "ARCFOUR"],
     details: [
-      "Designed by Ron Rivest of RSA Security in 1987.",
+      <p>Designed by {createLinkNode("Ron Rivest", "https://en.wikipedia.org/wiki/Ron_Rivest")} of RSA Security in 1987.</p>,
       "A stream cipher that combined plantext with a pseudorandom cipher stream.",
       "Used in protocols such as WEP for WiFi security.",
       "Largely considered insecure in modern times.",
@@ -282,7 +300,9 @@ const possibleResults = {
     displayName: "RSA",
     secondaryNames: ["Rivest–Shamir–Adleman"],
     details: [
-      "Designed by 	Ron Rivest, Adi Shamir, and Leonard Adleman in 1977.",
+      <p>Designed by {createLinkNode("Ron Rivest", "https://en.wikipedia.org/wiki/Ron_Rivest")},
+        {createLinkNode("Adi Shamir", "https://en.wikipedia.org/wiki/Adi_Shamir")}, and
+        {createLinkNode("Leonard Adleman", "https://en.wikipedia.org/wiki/Leonard_Adleman")} in 1977.</p>,
       "Named after the surnames of the designers.",
       "A public-key crytographic system where the keys are asymmetric.",
       "Typical key sizes range from 1536- to 4096-bit.",

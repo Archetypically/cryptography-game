@@ -11,31 +11,40 @@ import {
   Divider,
   Pagination,
   Form,
-  Radio, Button, List
+  Radio, Button, List, Dropdown, Input, Label
 } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 import ls from 'local-storage';
 
 export default function Quiz() {
-  const [answers, setAnswers] = useState(["2021-01-01"]);
+  const [answers, setAnswers] = useState([["2021", "CE"]]);
   const [currentStep, setCurrentStep] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isQuizEnabled, setQuizEnabled] = useState(false);
   const [isReviewEnabled, setReviewEnabled] = useState(false);
   const [redirectToProcessing, setRedirectToProcessing] = useState(false);
 
+  const eraOptions = [
+    { key: 'CE', text: 'CE', value: 'CE' },
+    { key: 'BCE', text: 'BCE', value: 'BCE' },
+  ]
+
   const questions = [{
-      question: "When is your birthday?",
-      components: <Form>
-          <Form.Field
-            inline
-            control='input'
-            type='date'
-            max="2021-01-01"
-            value={answers[0]}
-            onChange={handleAnswerChange}
-            label=<Icon name="birthday cake" />  />
-        </Form>,
+      question: "What is your favorite year?",
+      components:
+        <Input type='number'
+        max='9999'
+        min='0'
+        value={answers[0][0]}
+        onChange={handleAnswerChange}
+        labelPosition='right'
+        placeholder="2021">
+          <input />
+          <Label>
+            <Dropdown options={eraOptions} onChange={handleAnswerChange} value={answers[0][1]} />
+          </Label>
+        </Input>
+      ,
     },
     {
       question: "When it comes to clothing, which describes you the best?",
@@ -364,10 +373,18 @@ export default function Quiz() {
       thisAnswer = v.value;
     }
 
+    // HACK! Do not let any recruiters see this.
+    if (currentQuestionIndex === 0) {
+      let thisAnswerIndex = thisAnswer === "CE" || thisAnswer === "BCE" ? 1 : 0;
+      let thisRealAnswer = answers[0];
+      thisRealAnswer[thisAnswerIndex] = thisAnswer;
+      thisAnswer = thisRealAnswer;
+    }
 
     let answersCopy = [...answers];
     answersCopy[currentQuestionIndex] = thisAnswer;
     setAnswers(answersCopy);
+    console.log(answersCopy);
   }
 
 
@@ -398,6 +415,19 @@ export default function Quiz() {
                 defaultActivePage={1}
                 firstItem={null}
                 lastItem={null}
+                prevItem={
+                  currentQuestionIndex === 0
+                  ? null
+                  : undefined
+                }
+                nextItem={
+                  // If we're on the last page:
+                  currentQuestionIndex + 1 === questions.length
+                    // Don't show us
+                    ? null
+                    // Otherwise make this a normal thingy
+                    : undefined
+                }
                 pointing
                 secondary
                 totalPages={ questions.length }
@@ -436,7 +466,7 @@ export default function Quiz() {
           as="a"
           onClick={(() => { setCurrentStep(0)}) }
           active={ currentStep === 0 }
-          completed={ currentStep === 1 }
+          completed={ answers.length === questions.length }
           icon="question circle"
           title="Questions"
           description="Take the quiz"
